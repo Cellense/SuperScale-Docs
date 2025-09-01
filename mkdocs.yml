@@ -166,12 +166,12 @@ nav:
     - Integrations Overview: data-core/integrations-overview.md
     - Webhook Management: data-core/webhook-management.md
     - Security & Permissions: data-core/security-permissions.md
-  - Business:
-    - Landing Page: landing-page-website.md
-    - Marketing Positioning: marketing-positioning.md
-    - Sales Pitch: sales-pitch.md
-    - VC Investor Pitch: vc-investor-pitch.md
-    - Superscale Analysis: superscale-analysis.md
+  # - Business:
+  #   - Landing Page: landing-page-website.md
+  #   - Marketing Positioning: marketing-positioning.md
+  #   - Sales Pitch: sales-pitch.md
+  #   - VC Investor Pitch: vc-investor-pitch.md
+  #   - Superscale Analysis: superscale-analysis.md
 
 extra_css:
   - stylesheets/superscale.css
