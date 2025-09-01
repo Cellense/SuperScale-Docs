@@ -1,8 +1,8 @@
 site_name: SuperScale Documentation
 site_description: The success engine for games - Maximize the earning power of mobile games
-site_url: https://drinkredwine.github.io/ss-docs
-repo_url: https://github.com/drinkredwine/ss-docs
-repo_name: drinkredwine/ss-docs
+site_url: https://cellense.github.io/SuperScale-Docs
+repo_url: https://github.com/Cellense/SuperScale-Docs
+repo_name: Cellense/SuperScale-Docs
 
 # Standard docs directory structure
 docs_dir: docs
@@ -182,7 +182,7 @@ extra_javascript:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/drinkredwine/ss-docs
+      link: https://github.com/Cellense/SuperScale-Docs
       name: SuperScale on GitHub
   analytics:
     feedback:
@@ -198,7 +198,7 @@ extra:
           data: 0
           note: >-
             Thanks for your feedback! Help us improve this page by
-            <a href="https://github.com/drinkredwine/ss-docs/issues/new" target="_blank" rel="noopener">telling us what you found</a>.
+            <a href="https://github.com/Cellense/SuperScale-Docs/issues/new" target="_blank" rel="noopener">telling us what you found</a>.
 
 # SuperScale brand information
 site_author: SuperScale

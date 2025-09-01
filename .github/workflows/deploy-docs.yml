@@ -6,10 +6,16 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,24 +24,29 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
       - name: Install dependencies
         run: |
-          pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin
+          pip install -r requirements.txt
 
-      - name: Build and commit site
+      - name: Build site
         run: |
-          # Build the site
           mkdocs build
-          
-          # Configure git
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          # Add the built site and commit
-          git add docs-site/
-          git diff --staged --quiet || git commit -m "Auto-deploy documentation [skip ci]"
-          git push origin main
+          # Ensure Pages doesn't run Jekyll
+          touch docs-site/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs-site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
